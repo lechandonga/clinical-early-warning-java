@@ -1,0 +1,16 @@
+<configuration>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 业务覆盖日志：各测试类用 [业务] 用例N 前缀打印覆盖了哪些业务及用例结果 -->
+    <logger name="com.github.lechandonga.clinicalearlywarningjava.tests" level="INFO"/>
+    <logger name="com.github.lechandonga.clinicalearlywarningjava.service" level="WARN"/>
+    <logger name="com.github.lechandonga.clinicalearlywarningjava.bootstrap" level="WARN"/>
+
+    <root level="WARN">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>
